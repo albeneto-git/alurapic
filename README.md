@@ -1,6 +1,6 @@
 # alurapic
 
-> A Vue.js project
+> A Vue.js project. The objective of this project is to register images and perform your search.
 
 ## Build Setup
 
