@@ -9,6 +9,7 @@
 
         <meu-painel :titulo = "foto.titulo">
             <imagem-responsiva :url="foto.url" :titulo="foto.titulo"></imagem-responsiva>
+            <meu-botao rotulo="REMOVER" tipo="button" @botaoAtivado="remove(foto)" :confirmacao="true" estilo="perigo"/>
         </meu-painel>
 
       </li>
@@ -20,10 +21,12 @@
 <script>
   import Painel from '../shared/painel/Painel.vue';
   import ImagemResponsiva from '../shared/imagem-responsiva/ImagemResponsiva.vue';
+  import Botao from '../shared/botao/Botao.vue'
   export default {
     components: {
       'meu-painel': Painel,
-      'imagem-responsiva': ImagemResponsiva
+      'imagem-responsiva': ImagemResponsiva,
+      'meu-botao': Botao
     },
     data(){
       return {
@@ -36,6 +39,14 @@
       this.$http.get('http://localhost:3000/v1/fotos')
       .then(res => res.json())
       .then(fotos => this.fotos = fotos, err => console.log(err));
+    },
+    methods: {
+
+      remove(foto){
+        
+        alert('Remover a foto!' + foto.titulo);
+        
+      }
     },
     computed: {
       fotosComFiltro(){
