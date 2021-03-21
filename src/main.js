@@ -6,6 +6,7 @@ import { routes } from './routes';
 import './directives/Transform.js';
 
 Vue.use(VueResource);
+Vue.http.options.root = "http://localhost:3000";
 Vue.use(VeuRouter);
 
 const router = new VeuRouter({ 
