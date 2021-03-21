@@ -3,6 +3,7 @@ import App from './App.vue'
 import VueResource from 'vue-resource';
 import VeuRouter from 'vue-router';
 import { routes } from './routes';
+import './directives/Transform.js';
 
 Vue.use(VueResource);
 Vue.use(VeuRouter);
